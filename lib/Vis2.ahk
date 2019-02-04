@@ -2410,7 +2410,7 @@ class Vis2 {
          Vis2.Graphics.Startup()
 
          ; Check if image is an array of 4 numbers
-         if (image.1 ~= "^\d+$" && image.2 ~= "^\d+$" && image.3 ~= "^\d+$" && image.4 ~= "^\d+$") {
+         if (image.1 ~= "^[-+]?\d+$" && image.2 ~= "^[-+]?\d+$" && image.3 ~= "^\d+$" && image.4 ~= "^\d+$") {
             pBitmap := Gdip_BitmapFromScreen(image.1 "|" image.2 "|" image.3 "|" image.4)
             base64 := Vis2.stdlib.Gdip_EncodeBitmapTo64string(pBitmap, extension, quality)
             Gdip_DisposeImage(pBitmap)
@@ -2494,7 +2494,7 @@ class Vis2 {
       toFile(image, outputFile:="", crop:=""){
          Vis2.Graphics.Startup()
          ; Check if image is an array of 4 numbers
-         if (image.1 ~= "^\d+$" && image.2 ~= "^\d+$" && image.3 ~= "^\d+$" && image.4 ~= "^\d+$") {
+         if (image.1 ~= "^[-+]?\d+$" && image.2 ~= "^[-+]?\d+$" && image.3 ~= "^\d+$" && image.4 ~= "^\d+$") {
             pBitmap := Gdip_BitmapFromScreen(image.1 "|" image.2 "|" image.3 "|" image.4)
             Gdip_SaveBitmapToFile(pBitmap, outputFile)
             Gdip_DisposeImage(pBitmap)
